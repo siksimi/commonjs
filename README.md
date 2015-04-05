@@ -3,8 +3,8 @@ Private javascript functions by Y Sim.
 > Any comments would be appreciated :)
 
 ## List of functions
-- **Object.prototype.addComma** : insert a comma every 3 characters.
-	- Usage : ``obj.addComma();``
+- **String.prototype.addComma**, **Number.prototype.addComma** : insert a comma every 3 characters.
+	- Usage : ``str.addComma();``
 	- Examples
 	```
 	(1000034).addComma();				// 1,000,034

@@ -1,5 +1,6 @@
 /* ys.js : Private javascript functions */
 var ys = ys || {}; (function(){"use strict";
+ys.version = "1.0.4.1";
 ys.isiOS = (navigator.userAgent.match('iPad') || navigator.userAgent.match('iPhone') || navigator.userAgent.match('iPod'))?true:false;
 ys.isAndroid = navigator.userAgent.match('Android')?true:false;
 ys.getSearch = function(){return window.location.search;};
@@ -7,7 +8,8 @@ ys.getVar = function(a){var b = {}; var c = window.location.href.replace(/[?&]+(
 ys.getVars = function(a){var b = {}; var c = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,k,v) {b[k] = v;}); return a?(b[a]?b[a]:null):b;};
 ys.dateToString = function(a){var b = a?new Date(a):new Date(), p = function(i){return (i<10)?"0"+i:i;}; return p(b.getFullYear()) + "." + p(1 + b.getMonth()) + "." + p(b.getDate()) + " " +p(b.getHours()) + ":" +p(b.getMinutes());};
 ys.generateColor = function(n,p){var d = p||parseInt(new Date().getTime()/1000);var n = parseInt(md5(n*d).slice(0,6),16), a = Math.round(2.55*-5),R =(n>>16)+a,G=(n>>8&0x00FF)+a,B=(n&0x0000FF)+a;return (0x1222222+(R<255?R<1?0:R:255)*0x10000+(G<255?G<1?0:G:255)*0x100+(B<255?B<1?0:B:255)).toString(16).slice(1);};
-Object.prototype.addComma = function(){return this?parseInt(this).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1,"):this;};
+Number.prototype.addComma = function(){return this?parseInt(this).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1,"):this;};
+String.prototype.addComma = function(){return this?parseInt(this).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1,"):this;};
 String.prototype.cutStr = function(a,b){return (this.toString().indexOf(' ', a)==-1)?this:this.substring(0,this.indexOf(' ', a))+(b?"...":"");};
 String.prototype.coloredStr = function(c,b){return "<span style=\"color:#"+c+";"+(b?" font-weight:bold;":"")+"\">"+this+"</span>";}
 }());
