@@ -1,4 +1,4 @@
-/* ys.js : this is a personal javascript function library */
+/* ys.js : custom javascript functions */
 (function(){
 	"use strict";
 	String.prototype.addComma = function(){return this?this.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"):this;};
