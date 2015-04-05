@@ -10,9 +10,9 @@ Private javascript functions by Y Sim.
 	"1000034".addComma();		// 1,000,034
 	```
 - Object.prototype.cutStr : cut string without cutting any word
-	- Usage : ``obj.cutStr(integer NUMBER_OF_CHARACTERS); `` 
+	- Usage : ``obj.cutStr(integer MIN_NUMBER_OF_CHARACTERS); `` 
 		- *Note* : In this case, three dots("...") are added at the end of phrase as a default option
-	- Usage : ``obj.cutStr(integer NUMBER_OF_CHARACTERS, boolean ADD_THREE_DOTS_OR_NOT);``
+	- Usage : ``obj.cutStr(integer MIN_NUMBER_OF_CHARACTERS, boolean ADD_THREE_DOTS_OR_NOT);``
 	- Example
 	```
 	"Lorem Ipsum is simply dummy text of the printing industry.".cutStr(10);	
@@ -34,12 +34,14 @@ Private javascript functions by Y Sim.
 	```
 	ys.getSearch();				// ?search1=for&search2=example
 	```
-- ys.getVars
+- ys.getVars (*alternative form* : ys.getVar)
 	- Usage : ``ys.getVars();``
 	- Usage : ``ys.getVars(String SEARCH_VARIABLE);``
 	- Example (*In case of* : www.example.com/?search1=for&search2=example)
 	```
-	ys.getVar();				// Object {search1: "for", search2: "example"}
-	ys.getVar(search2);			// example
-	ys.getVar(search_none);		// null
+	ys.getVars();					// Object {search1: "for", search2: "example"}
+	ys.getVars().search1			// for
+	ys.getVars()['search1']			// for
+	ys.getVars(search2);			// example
+	ys.getVars(search_none);		// null
 	```
