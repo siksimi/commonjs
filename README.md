@@ -28,8 +28,10 @@ Private javascript functions by Y Sim.
 	- Usage : ``str.coloredStr(String HTML_COLOR_CODE, Boolean TEXT_BOLD_OR_NOT)``
 	- Examples
 	```
-	"Lorem Ipsum".coloredStr("55ffdd");			// <span style="color:#55ffdd;">Lorem Ipsum</span>
-	"Lorem Ipsum".coloredStr("55ffdd",true);	// <span style="color:#55ffdd; font-weight:bold;">Lorem Ipsum</span>
+	"Lorem Ipsum".coloredStr("55ffdd");			
+	// <span style="color:#55ffdd;">Lorem Ipsum</span>
+	"Lorem Ipsum".coloredStr("55ffdd",true);	
+	// <span style="color:#55ffdd; font-weight:bold;">Lorem Ipsum</span>
 	```
 - **ys.getSearch**
 	- Usage : ``ys.getSearch();``
@@ -59,9 +61,9 @@ Private javascript functions by Y Sim.
 	```
 - **ys.generateColor** : generates random dark color (original purpose : random font color for anonymous usernames)
 	- Usage : ``ys.generateColor(Number seed1);``
-		- *Note* : if seed2 is missing, seed2 will depend on present time (i.e. ``parseInt(new Date().getTime()/1000)`` and will be changed once in a second)
+		- *Note* : if seed2 is missing, seed2 depends on present time (i.e. ``parseInt(new Date().getTime()/1000)`` and will be changed once in a second)
 	- Usage : ``ys.generateColor(Number seed1, Number seed2);``
-		- *Note* : if you fix both seed1 and seed2, it will generated exact same color repeatedly
+		- *Note* : if you fix both seed1 and seed2, this will generate exact same color repeatedly
 	- Examples
 	```
 	ys.generateColor(184);			// 9b83ba (this varies upon your present time)
@@ -69,7 +71,7 @@ Private javascript functions by Y Sim.
 	```
 	
 ## List of variables
-- *Boolean* **ys.isiOS**, **ys.isAndroid** : returns true if ``navigator.userAgent`` matches to iOS (or Android)
+- Boolean **ys.isiOS**, **ys.isAndroid** : returns *true* if ``navigator.userAgent`` matches to iOS (or Android)
 		- *Note* : userAgent iOS includes userAgents of iPod, iPad, and iPhone.
 	- Examples (*In case of* : userAgent is iPhone)
 	```
