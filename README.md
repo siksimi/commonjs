@@ -12,9 +12,9 @@ Private javascript functions by Y Sim.
 	"this is not a number".addComma();	// NaN
 	```
 - **String.prototype.cutStr** : cut string without cutting any word
-	- Usage : ``obj.cutStr(*Number* MIN_NUMBER_OF_CHARACTERS); `` 
+	- Usage : ``obj.cutStr(Number MIN_NUMBER_OF_CHARACTERS); `` 
 		- *Note* : In this case, three dots("...") are added at the end of phrase as a default option
-	- Usage : ``obj.cutStr(*Number* MIN_NUMBER_OF_CHARACTERS, *Boolean* ADD_THREE_DOTS_OR_NOT);``
+	- Usage : ``obj.cutStr(Number MIN_NUMBER_OF_CHARACTERS, Boolean ADD_THREE_DOTS_OR_NOT);``
 	- Example
 	```
 	"Lorem Ipsum is simply dummy text of the printing industry.".cutStr(10);	
@@ -31,8 +31,8 @@ Private javascript functions by Y Sim.
 	// Lorem Ipsum is simply dummy text
 	```
 - **String.prototype.coloredStr** : returns HTML span element with a specified font color
-	- Usage : ``str.coloredStr(*String* HTML_COLOR_CODE)``
-	- Usage : ``str.coloredStr(*String* HTML_COLOR_CODE, *Boolean* TEXT_BOLD_OR_NOT)``
+	- Usage : ``str.coloredStr(String HTML_COLOR_CODE)``
+	- Usage : ``str.coloredStr(String HTML_COLOR_CODE, Boolean TEXT_BOLD_OR_NOT)``
 	- Example
 	```
 	"Lorem Ipsum".coloredStr("55ffdd");			// <span style="color:#55ffdd;">Lorem Ipsum</span>
@@ -46,7 +46,7 @@ Private javascript functions by Y Sim.
 	```
 - **ys.getVars** (*alternative form* : **ys.getVar**)
 	- Usage : ``ys.getVars();``
-	- Usage : ``ys.getVars(*String* SEARCH_VARIABLE);``
+	- Usage : ``ys.getVars(String SEARCH_VARIABLE);``
 	- Example (*In case of* : www.example.com/?search1=for&search2=example)
 	```
 	ys.getVars();					// Object {search1: "for", search2: "example"}
@@ -58,11 +58,21 @@ Private javascript functions by Y Sim.
 - **ys.dateToString** : ~~(My own preferred syntax)~~ returns a neat string from a *Date* object
 	- Usage : ``ys.dateToString();``
 		- *Note* : In this case, ``ys.dateToString(new Date());`` is called (returns present time)
-	- Usage : ``ys.dateToString(*Date* SOME_DATE);``
+	- Usage : ``ys.dateToString(Date SOME_DATE);``
 	- Example 
 	```
-	ys.dateToString();				// 201x.xx.xx xx:xx *(this represents your present time)*
+	ys.dateToString();				// 201x.xx.xx xx:xx (this represents your present time)
 	ys.dateToString(1428240000000);	// 2015.04.05 22:20
+	```
+- **ys.generateColor** : generates random dark color ~~(original purpose : random font color for anonymous usernames)~~
+	- Usage : ``ys.generateColor(Number seed1);``
+		- * Note * : if seed2 is missing, seed2 will depend on present time (i.e. parseInt(new Date().getTime()/1000) and will be changed once in a second)
+	- Usage : ``ys.generateColor(Number seed1, Number seed2);``
+		- * Note * : if you fix both seed1 and seed2, it will generated exact same color repeatedly
+	- Example
+	```
+	ys.generateColor(184);			// 9b83ba (this varies upon your present time)
+	ys.generateColor(184, Math.PI);	// 765fb2 (fixed)
 	```
 	
 ## List of variables
