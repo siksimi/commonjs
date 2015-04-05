@@ -13,12 +13,11 @@ Private javascript functions by Y Sim.
 	```
 - **String.prototype.cutStr** : cut string without cutting any word
 	- Usage : ``obj.cutStr(Number MIN_NUMBER_OF_CHARACTERS); `` 
-		- *Note* : In this case, three dots("...") are added at the end of phrase as a default option
-	- Usage : ``obj.cutStr(Number MIN_NUMBER_OF_CHARACTERS, Boolean ADD_THREE_DOTS_OR_NOT);``
+	- Usage : ``obj.cutStr(Number MIN_NUMBER_OF_CHARACTERS, Boolean ADD_THREE_DOTS);``
 	- Examples
 	```
-	"Lorem Ipsum is simply dummy text of the printing industry.".cutStr(10);	
-	// Lorem Ipsum...
+	"Lorem Ipsum is simply dummy text of the printing industry".cutStr(10);	
+	// Lorem Ipsum
 	"Lorem Ipsum is simply dummy text of the printing industry".cutStr(20,true);	
 	// Lorem Ipsum is simply...
 	"Lorem Ipsum is simply dummy text of the printing industry".cutStr(30,false);	
